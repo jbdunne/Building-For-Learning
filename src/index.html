@@ -1,0 +1,110 @@
+<!doctype html>
+
+<head>
+
+    <link href="stylesheets/grid/output.css" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/screen.css" rel="stylesheet" type="text/css" />
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script>
+    var foo = document.getElementById('foo');
+
+foo.scrollTop = foo.scrollHeight;
+</script>
+</head>
+
+
+<body>
+<div id="wrapper">
+<div class="g-all-c">
+<image class="logo" id="logo" src="images/logo.png">
+
+<br><br>
+<h2>CodeBecky is a forum for problem-based learning. <br><br> Enter into a code-review and preview enriched chat room <br><br>by clicking on the language you want to learn.</h2>
+
+
+<div id="buttonC">
+  <table id="logoBtnsTable"style="width:100%">
+  <tr>
+
+    <td> <div><a href="html"><img id="html" class="logoBtns" src="images/html.png"></div></td>
+
+    <td> <div><a href="css"><img id="css" class="logoBtns" src="images/css.png"></div></td>
+
+</tr>
+
+  <tr>
+
+    <td> <div><a href="ang"><img id="angular" class="logoBtns" src="images/angular.png"></div></td><td> <div><a href="node"><img id="node" class="logoBtns" src="images/node.png"></div></td>
+
+</tr>
+
+</table>
+
+
+<h2>Sample HTML challenge: <br><br> Use numbers, bullets and definitions <br><br>to create a nested list.</h2>
+
+<section>
+<article id="example_layout_3" class="l-2cr">
+<h3><b>  </b></h3>
+<div class="c-1">
+        <h3 style="padding: 10px 0;"><b>CODE:</b></h3>
+            <div class="box" style="padding: 10px;">
+              <textarea id="code" placeholder="Code"></textarea>
+            </div>
+            <!-- <button class="rightbtn">Preview</button> -->
+            <h3 style="padding: 10px 0;"><b>PREVIEW:</b></h3>
+            <div class="box" style="padding: 10px;">
+              <div id="preview"></div>
+            </div>
+</div>
+ <div class="c-2">
+                    <h3 style="padding: 10px 0;"><b>Chat:</b></h3>
+                        <div class="box" style="padding: 10px;">
+<div class="chatCont">
+<!--socket io template-->
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+<!--end socket io template-->
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var socket = io();
+  $('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+  socket.on('chat message', function(msg){
+    $('#messages').append($('<li>').text(msg));
+  });
+</script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  $(document).on("keyup", "#code", function() {
+    var code = $("#code").val();
+    var json = '{"code" : "'+ encodeURIComponent(code) +'\"}';
+
+    clearTimeout(t);
+
+    var t = setTimeout(function() {
+      $("#preview").html('<iframe src="/render?code='+ encodeURIComponent(json) +'" border="0" width="100%"></iframe>');
+    }, 500);
+
+  });
+
+</script>
+</body>
+<footer>
+</footer>
+</html>

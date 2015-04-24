@@ -1,0 +1,12 @@
+{
+  "name": "codebecky",
+  "version": "0.0.1",
+  "description": "collaborative chatting environment",
+  "dependencies": {
+    "express": "^4.10.2",
+    "socket.io": "^1.2.0",
+    "hogan-express": "*",
+    "express-session": "*",
+    "body-parser": "*"
+  }
+}

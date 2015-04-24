@@ -1,0 +1,120 @@
+<!doctype html>
+
+<head>
+
+<link href="stylesheets/grid/output.css" rel="stylesheet" type="text/css"/>
+<link href="stylesheets/screen.css" rel="stylesheet" type="text/css"/>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script>
+  var socket = io();
+  $('form').submit(function(){
+    socket.emit('chat message', $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+</script>
+
+</head>
+
+
+<body class="">
+<div id="wrapper">
+
+<image id="pgLogo" src="images/html.png">
+<div class="g-all-p">
+
+<div><a href="/"><image id="back" src="images/back.png"></a></div>
+<image class="logo2" id="logo2" src="images/logo.png">
+
+
+
+
+
+
+
+
+<div>
+
+</div>
+
+<section>
+<article id="example_layout_3" class="l-2cr">
+
+
+
+      <div class="c-1">
+        <h3 style="padding: 10px 0;"><b>CODE:</b></h3>
+
+            <div class="box" style="padding: 10px;">
+              <textarea id="code" placeholder="Code"></textarea>
+            </div>
+
+            <!-- <button class="rightbtn">Preview</button> -->
+
+            <h3 style="padding: 10px 0;"><b>PREVIEW:</b></h3>
+
+            <div class="box" style="padding: 10px;">
+              <div id="preview"></div>
+            </div>
+
+
+                    <div class="c-2">
+                    <h3><b>Chat:</b></h3>
+                        <div class="box">
+                           <div id="chatContent">
+                           <text>
+                          <b>claire says:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br>
+                          <br>
+                          <b>joe says:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br>
+                          <br>
+                          <b>claire says:</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <br>
+                          <br>
+
+
+
+                           </text>
+                        </div>
+
+                    </div>
+                </article>
+
+<article>
+<div class="chatCont">
+<!--socket io template-->
+    <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
+<!--end socket io template-->
+</div>
+</article>
+
+
+</section>
+</div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  $(document).on("keyup", "#code", function() {
+    var code = $("#code").val();
+    var json = '{"code" : "'+ encodeURIComponent(code) +'\"}';
+
+    clearTimeout(t);
+
+    var t = setTimeout(function() {
+      $("#preview").html('<iframe src="/render?code='+ encodeURIComponent(json) +'" border="0" width="100%"></iframe>');
+    }, 500);
+
+  });
+
+</script>
+</body>
+<footer>
+
+</footer>
+</html>

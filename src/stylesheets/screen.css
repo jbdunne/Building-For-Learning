@@ -1,0 +1,173 @@
+textarea {
+	font-size: 15px;
+	font-family:'Lucida Console',sans-serif;
+	width:100%;
+	border:none;
+	padding:10px;
+	background:none;
+	height: 200px;
+	line-height: 30px;
+}
+
+textarea:focus {
+	outline: none;
+}
+
+html {
+border:0;
+margin:0;
+padding:0;
+}
+
+.bp-reset-element,body,h1,h2,h3,h4,h5,h6,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,blockquote,q,th,td,caption,table,div,span,object,iframe,p,pre,a,abbr,acronym,address,code,del,dfn,em,img,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,caption,tbody,tfoot,thead,tr {
+border:0;
+font-weight:inherit;
+font-style:inherit;
+font-size:100%;
+font-family:inherit;
+vertical-align:baseline;
+margin:0;
+padding:0;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary {
+display:block;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+content:"";
+}
+
+th,td,caption {
+float:none!important;
+text-align:left;
+font-weight:400;
+vertical-align:middle;
+}
+
+table {
+border-collapse:separate;
+border-spacing:0;
+vertical-align:middle;
+}
+
+a img {
+border:none;
+}
+
+#mueller-indicators {
+position:fixed;
+top:0;
+left:0;
+}
+
+#mueller-indicators p {
+font-size:11px;
+font-weight:700;
+color:#fff;
+-moz-border-radius-bottomright:4px;
+-webkit-border-bottom-right-radius:4px;
+border-bottom-right-radius:4px;
+background:#666;
+filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+opacity:0.4;
+margin:0 0 2px;
+padding:.25em 1em;
+}
+
+body {
+font-family:"Gotham", sans-serif;
+font-weight:400;
+background:white;
+margin-bottom:0;
+padding-top:100px;
+
+}
+
+body div#wrapper {
+width:100%;
+}
+
+section {
+overflow:hidden;
+zoom:1;
+}
+
+p {
+font-size:1em;
+line-height:1.5em;
+margin:1.5em 0;
+padding:0;
+}
+
+h1 {
+display:block;
+font-size:2em;
+line-height:.75em;
+font-family:"Gotham", sans-serif;
+font-weight:200;
+color:#333;
+text-transform:uppercase;
+padding:0;
+}
+
+h3 {
+display:block;
+font-family:"Gotham", sans-serif;
+font-weight:200;
+color:#333;
+text-transform:uppercase;
+margin-top:30px;
+}
+
+#chatz{
+	width:31%;
+	height:20px;
+
+}
+
+.chatCont{padding-bottom: 100px;}
+ .rightbtn{
+ 	float:right;
+ 	margin:0px 0px 	0px 0px;
+ }
+
+ #topRightbtn{
+
+ }
+
+#back{margin-left:-7%;padding-right:10px;float:left;height:5%; width:5%;margin-top: 4px;position:relative; z-index: 1;}
+#desc{margin:10px 0 10px 37%;  height:30%; width:30%;}
+h2{margin:25px 0 10px 45px;text-align:center;font-size:24px;font-family:Gotham, sans-serif}
+#logo{margin: 0 10% -25px 32%; height:35%; width:40%;}
+#logo2{margin: 0 10% 25px -10px; height:35%; width:40%;}
+#logoBtnsTable{margin-left:5%;padding-top: 100px;padding-bottom: 200px}
+#chatContent{padding-top: 30px}
+#buttonC{width:100%;}
+.logoBtns{margin: 10px 0 5px 0; height:80%; width:80%;}
+#pgLogo{margin-bottom:-120px;padding-left:70%;height:10%; width:10%;}
+footer{background-color:#ff3333;width: 100%; height: 250px; padding-bottom:0; margin-bottom:0;}
+#topSect{margin-bottom: 40px}
+
+.box {
+display:block;
+background:#f8f8f8;
+color:#333;
+margin-bottom:1.5em;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+-ms-border-radius:4px;
+-o-border-radius:4px;
+border-radius:4px;
+overflow:hidden;
+zoom:1;
+padding:0 2.5em;
+
+
+}
+
+@media screen and max-width 479px{
+body {
+padding:3em 20px!important;
+}
+}
